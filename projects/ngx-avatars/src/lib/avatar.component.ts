@@ -28,7 +28,7 @@ type Style = Partial<CSSStyleDeclaration>;
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'ngx-avatar',
+  selector: 'ngx-avatars',
   styles: [
     `
       :host {
