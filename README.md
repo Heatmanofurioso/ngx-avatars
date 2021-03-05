@@ -1,7 +1,14 @@
-## &lt;ngx-avatar&gt;
-[![npm version](https://badge.fury.io/js/ngx-avatar.svg)](https://badge.fury.io/js/ngx-avatar) [![npm](https://img.shields.io/npm/dt/ngx-avatar.svg)](https://www.npmjs.com/package/ngx-avatar) [![Build Status](https://travis-ci.org/HaithemMosbahi/ngx-avatar.svg?branch=master)](https://travis-ci.org/HaithemMosbahi/ngx-avatar)
+## &lt;ngx-avatars&gt;
+[![npm version](https://badge.fury.io/js/ngx-avatar.svg)](https://badge.fury.io/js/ngx-avatar) [![npm](https://img.shields.io/npm/dt/ngx-avatar.svg)](https://www.npmjs.com/package/ngx-avatars) [![Build Status](https://travis-ci.org/HaithemMosbahi/ngx-avatar.svg?branch=master)](https://travis-ci.org/HaithemMosbahi/ngx-avatar)
 [![Angular Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://angular.io/styleguide)
 ![size](https://img.shields.io/bundlephobia/minzip/ngx-avatar.svg)
+
+## Warning
+Do not confuse with ![ngx-avatar](https://github.com/HaithemMosbahi/ngx-avatar) ! This project is it's spiritual successor, and all credit goes to HaithemMosbahi and his fellow contributors which will remain in this project's contributing list.
+
+The intention of this project is to maintain and evolve the solution due to the original owner not working actively on it anymore.
+
+## Description
 
 A universal avatar component for Angular applications that fetches / generates avatar based on the information you have about the user. The component has a fallback system that if for example an invalid Facebook ID is used it will try google ID and so on.
 
@@ -28,29 +35,29 @@ Moreover, the component can shows name initials or simple value as avatar.
 
  The fallback system uses the same order as the above source list, Facebook has the highest priority, if it fails, google source will be used, and so on.
 
- If you enjoy watching videos, check out this [tutorial](https://medium.com/letsboot/lets-play-with-ngx-avatar-ec585dc39161) on medium which explains how to use ngx-avatar in your angular application.
+ If you enjoy watching videos, check out this [tutorial](https://medium.com/letsboot/lets-play-with-ngx-avatar-ec585dc39161) on medium which explains how to use ngx-avatars in your angular application.
  
- Check out this [link](https://stackblitz.com/edit/ngx-avatar-demo) to play with ngx-avatar :grinning:
+ Check out this [link](https://stackblitz.com/edit/ngx-avatar-demo) to play with ngx-avatars :grinning:
 
 ## Installation
 
 Install avatar component using [Yarn](https://yarnpkg.com/):
 
 ```bash
-$ yarn add ngx-avatar
+$ yarn add ngx-avatars
 ```
 
 or
 
 ```bash
-$ npm install ngx-avatar --save
+$ npm install ngx-avatars --save
 ```
 
 ## Usage
 
 1. Import AvatarModule:
 
-Once you have installed ngx-avatar, you can import it in your `AppModule`:
+Once you have installed ngx-avatars, you can import it in your `AppModule`:
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -60,7 +67,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 // Import your AvatarModule
-import { AvatarModule } from 'ngx-avatar';
+import { AvatarModule } from 'ngx-avatars';
 
 @NgModule({
   declarations: [
@@ -86,37 +93,37 @@ Starting from version 3.4.0:
 Once the AvatarModule is imported, you can start using the component in your Angular application:
 
 ```html
-<ngx-avatar></ngx-avatar>
+<ngx-avatars></ngx-avatars>
 ```
 ## Examples
 
 ```html
-<ngx-avatar facebookId="1508319875"></ngx-avatar>
-<ngx-avatar googleId="1508319875"></ngx-avatar>
-<ngx-avatar twitterId="1508319875"></ngx-avatar>
-<ngx-avatar instagramId="dccomics" size="70"></ngx-avatar>
-<ngx-avatar skypeId="1508319875"></ngx-avatar>
-<ngx-avatar gravatarId="adde9b2b981a8083cf084c63ad86f753"></ngx-avatar>
-<ngx-avatar gravatarId="user@gmail.com"></ngx-avatar>
-<ngx-avatar src="assets/avatar.jpg"></ngx-avatar>
-<ngx-avatar name="John Doe"></ngx-avatar>
-<ngx-avatar value="75%"></ngx-avatar>
+<ngx-avatars facebookId="1508319875"></ngx-avatars>
+<ngx-avatars googleId="1508319875"></ngx-avatars>
+<ngx-avatars twitterId="1508319875"></ngx-avatars>
+<ngx-avatars instagramId="dccomics" size="70"></ngx-avatars>
+<ngx-avatars skypeId="1508319875"></ngx-avatars>
+<ngx-avatars gravatarId="adde9b2b981a8083cf084c63ad86f753"></ngx-avatars>
+<ngx-avatars gravatarId="user@gmail.com"></ngx-avatars>
+<ngx-avatars src="assets/avatar.jpg"></ngx-avatars>
+<ngx-avatars name="John Doe"></ngx-avatars>
+<ngx-avatars value="75%"></ngx-avatars>
 
-<ngx-avatar facebookId="userFacebookID" skypeId="userSkypeID"
+<ngx-avatars facebookId="userFacebookID" skypeId="userSkypeID"
  googleId="google" name="Haithem Mosbahi" src="assets/avatar.jpg"
  value="28%"  twitterId="twitter"
  gravatarId="adde9b2b981a8083cf084c63ad86f753" 
  size="100" [round]="true">
-</ngx-avatar>
+</ngx-avatars>
 
 ```
-Check out this [file](https://github.com/HaithemMosbahi/ngx-avatar/blob/master/demo/src/app/app.component.html) for more examples on how to use ngx-avatar in your application.
+Check out this [file](https://github.com/Heatmanofurioso/ngx-avatars/blob/master/demo/src/app/app.component.html) for more examples on how to use ngx-avatars in your application.
 
 ## Demo
 Check out this [link](https://ngx-avatar-demo.stackblitz.io/) for a live demo.
-Also, you can play with ngx-avatar using an online editor [here](https://stackblitz.com/edit/ngx-avatar-demo) on stackblitz.
+Also, you can play with ngx-avatars using an online editor [here](https://stackblitz.com/edit/ngx-avatar-demo) on stackblitz.
 
-Moreover, the demo folder contains an application generated with angular cli that uses ngx-avatar component.
+Moreover, the demo folder contains an application generated with angular cli that uses ngx-avatars component.
 
 To run the demo application :
 ```bash
@@ -176,7 +183,7 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { UserService } from "./user.service";
-import { AvatarModule, AvatarSource } from 'ngx-avatar';
+import { AvatarModule, AvatarSource } from 'ngx-avatars';
 
 const avatarSourcesOrder = [AvatarSource.CUSTOM, AvatarSource.INITIALS];
 
@@ -208,7 +215,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { UserService } from "./user.service";
-import { AvatarModule } from "ngx-avatar";
+import { AvatarModule } from "ngx-avatars";
 import { HttpClientModule } from "@angular/common/http";
 
 const avatarColors = ["#FFB6C1", "#2c3e50", "#95a5a6", "#f39c12", "#1abc9c"];
@@ -231,7 +238,7 @@ export class AppModule { }
 
 ```
 
-* Users who use a prior version of ngx-avatar ( < 3.1 ) can override the configuration as follows:
+* Users who use a prior version of ngx-avatars ( < 3.1 ) can override the configuration as follows:
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -239,7 +246,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { UserService } from "./user.service";
-import { AvatarModule,AvatarConfig } from "ngx-avatar";
+import { AvatarModule,AvatarConfig } from "ngx-avatars";
 import { HttpClientModule } from "@angular/common/http";
 
 const avatarConfig = new AvatarConfig(['red','blue','pink']);
@@ -266,10 +273,10 @@ export class AppModule { }
  * **avatar-container** : class that represents the avatar container - the host element. Styles in this class will be applied on the avatar whether is an image or text.
  * **avatar-content** : css class that represents the avatar element which is embedded inside the avatar-container.
  
- To overcome Angular's view encapsulation, you may need to use the /deep/ operator to target it. Here's an example that shows how to override ngx-avatar style : 
+ To overcome Angular's view encapsulation, you may need to use the /deep/ operator to target it. Here's an example that shows how to override ngx-avatars style : 
  
  ```html
-   <ngx-avatar class="my-avatar" value="HM"> </ngx-avatar>
+   <ngx-avatars class="my-avatar" value="HM"> </ngx-avatars>
  ```
  Your css file might look like this 
  
@@ -291,7 +298,7 @@ export class AppModule { }
   * This version has a **breaking change** in the way the module with configuration is imported, for more details see Override Avatar Configuration section. 
 * 3.0: Add support to Angular 6
   * Build the library with Angular CLI
-* 2.9: Bug fixes [#16](https://github.com/HaithemMosbahi/ngx-avatar/issues/16) & [#16](https://github.com/HaithemMosbahi/ngx-avatar/issues/16)
+* 2.9: Bug fixes [#16](https://github.com/Heatmanofurioso/ngx-avatars/issues/16) & [#16](https://github.com/Heatmanofurioso/ngx-avatars/issues/16)
 * 2.8: add initials size option
 * 2.7: code refactoring
 * 2.6: Customize avatar options
@@ -349,4 +356,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## License
 
-MIT © [Haithem Mosbahi](mailto:haithem.mosbahi@gmail.com)
+MIT © [Tiago Casinhas](mailto:tiago.gaspar.casinhas@gmail.com)
