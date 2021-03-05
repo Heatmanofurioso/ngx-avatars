@@ -1,7 +1,8 @@
 ## &lt;ngx-avatars&gt;
-[![npm version](https://badge.fury.io/js/ngx-avatar.svg)](https://badge.fury.io/js/ngx-avatar) [![npm](https://img.shields.io/npm/dt/ngx-avatar.svg)](https://www.npmjs.com/package/ngx-avatars) [![Build Status](https://travis-ci.org/HaithemMosbahi/ngx-avatar.svg?branch=master)](https://travis-ci.org/HaithemMosbahi/ngx-avatar)
+[![npm version](https://badge.fury.io/js/ngx-avatars.svg)](https://badge.fury.io/js/ngx-avatars) [![npm](https://img.shields.io/npm/dt/ngx-avatars.svg)](https://www.npmjs.com/package/ngx-avatars) [!
+[Build Status](https://travis-ci.org/Heatmanofurioso/ngx-avatars.svg?branch=master)](https://travis-ci.org/Heatmanofurioso/ngx-avatars)
 [![Angular Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://angular.io/styleguide)
-![size](https://img.shields.io/bundlephobia/minzip/ngx-avatar.svg)
+![size](https://img.shields.io/bundlephobia/minzip/ngx-avatars.svg)
 
 ## Warning
 Do not confuse with ![ngx-avatar](https://github.com/HaithemMosbahi/ngx-avatar) ! This project is it's spiritual successor, and all credit goes to HaithemMosbahi and his fellow contributors which will remain in this project's contributing list.
