@@ -1,5 +1,5 @@
 /*
- * Public API Surface of ngx-avatar
+ * Public API Surface of ngx-avatars
  */
 export * from './lib/avatar.module';
 export * from './lib/avatar.component';
