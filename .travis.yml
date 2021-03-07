@@ -1,8 +1,8 @@
 language: node_js
 node_js:
   - '15.10.0'
-sudo: required
 dist: trusty
+os: linux
 addons:
     chrome: stable
 before_script:
@@ -18,6 +18,6 @@ deploy:
   on:
     tags: true
   provider: npm
-  skip_cleanup: true
+  cleanup: false
   email: "casinhas32@hotmail.com"
-  api_key: $NPMJS_DEPLOY_TOKEN
+  api_token: $NPMJS_DEPLOY_TOKEN
