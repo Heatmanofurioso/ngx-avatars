@@ -25,11 +25,11 @@
       "dom"
     ],
     "paths": {
-      "ngx-avatar": [
-        "dist/ngx-avatar"
+      "ngx-avatars": [
+        "dist/ngx-avatars"
       ],
-      "ngx-avatar/*": [
-        "dist/ngx-avatar/*"
+      "ngx-avatars/*": [
+        "dist/ngx-avatars/*"
       ]
     }
   },
