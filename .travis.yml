@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - '12'
+  - '15.10.0'
 sudo: required
 dist: trusty
 addons:
@@ -14,3 +14,10 @@ before_install:
   - sh -e /etc/init.d/xvfb start
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
+deploy:
+  on:
+    tags: true
+  provider: npm
+  skip_cleanup: true
+  email: "casinhas32@hotmail.com"
+  api_key: $NPMJS_DEPLOY_TOKEN
