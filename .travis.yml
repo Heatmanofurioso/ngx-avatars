@@ -19,5 +19,5 @@ deploy:
     tags: true
   provider: npm
   cleanup: false
-  email: "casinhas32@hotmail.com"
+  email: "tiago.gaspar.casinhas@gmail.com"
   api_token: $NPMJS_DEPLOY_TOKEN
