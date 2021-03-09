@@ -1,5 +1,5 @@
 ## &lt;ngx-avatars&gt;
-[![npm version](https://badge.fury.io/js/ngx-avatars.svg)](https://badge.fury.io/js/ngx-avatars) [![npm](https://img.shields.io/npm/dt/ngx-avatars.svg)](https://www.npmjs.com/package/ngx-avatars) [!
+[![npm version](https://badge.fury.io/js/ngx-avatars.svg)](https://badge.fury.io/js/ngx-avatars.svg) [![npm](https://img.shields.io/npm/dt/ngx-avatars.svg)](https://www.npmjs.com/package/ngx-avatars) [!
 [Build Status](https://travis-ci.org/Heatmanofurioso/ngx-avatars.svg?branch=master)](https://travis-ci.org/Heatmanofurioso/ngx-avatars)
 [![Angular Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://angular.io/styleguide)
 ![size](https://img.shields.io/bundlephobia/minzip/ngx-avatars.svg)
