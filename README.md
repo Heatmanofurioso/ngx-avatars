@@ -1,11 +1,13 @@
 ## &lt;ngx-avatars&gt;
-[![npm version](https://badge.fury.io/js/ngx-avatars.svg)](https://badge.fury.io/js/ngx-avatars.svg) [![npm](https://img.shields.io/npm/dt/ngx-avatars.svg)](https://www.npmjs.com/package/ngx-avatars) [!
-[Build Status](https://travis-ci.org/Heatmanofurioso/ngx-avatars.svg?branch=master)](https://travis-ci.org/Heatmanofurioso/ngx-avatars)
+[![npm version](https://badge.fury.io/js/ngx-avatars.svg)](https://badge.fury.io/js/ngx-avatars.svg) 
+[![npm](https://img.shields.io/npm/dt/ngx-avatars.svg)](https://www.npmjs.com/package/ngx-avatars) 
+[![Build Status](https://travis-ci.com/Heatmanofurioso/ngx-avatars.svg?branch=master)](https://travis-ci.org/Heatmanofurioso/ngx-avatars)
 [![Angular Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://angular.io/styleguide)
 ![size](https://img.shields.io/bundlephobia/minzip/ngx-avatars.svg)
 
 ## Warning
-Do not confuse with ![ngx-avatar](https://github.com/HaithemMosbahi/ngx-avatar) ! This project is it's spiritual successor, and all credit goes to HaithemMosbahi and his fellow contributors which will remain in this project's contributing list.
+Do not confuse with [ngx-avatar](https://github.com/HaithemMosbahi/ngx-avatar) This project is it's spiritual successor, and all credit goes to HaithemMosbahi and his fellow contributors which 
+will remain in this project's contributing list.
 
 The intention of this project is to maintain and evolve the solution due to the original owner not working actively on it anymore.
 
@@ -86,7 +88,6 @@ import { AvatarModule } from 'ngx-avatars';
 export class AppModule { }
 ```
 
-Starting from version 3.4.0:
 - `HttpClientModule` is mandatory in order to fetch the avatar from external sources (Gravatar, Google, ...).
 
 2. Start using it:
@@ -122,7 +123,7 @@ Check out this [file](https://github.com/Heatmanofurioso/ngx-avatars/blob/master
 
 ## Demo
 Check out this [link](https://ngx-avatar-demo.stackblitz.io/) for a live demo.
-Also, you can play with ngx-avatars using an online editor [here](https://stackblitz.com/edit/ngx-avatar-demo) on stackblitz.
+Also, you can play with ngx-avatars using an online editor [here](https://ngx-avatars-demo.stackblitz.io) on stackblitz.
 
 Moreover, the demo folder contains an application generated with angular cli that uses ngx-avatars component.
 
@@ -208,8 +209,6 @@ export class AppModule { }
 
 Here's an example on how to import the AvatarModule with your own set of colors.
 
-* Starting from version 3.1, overriding the avatar configuration can be done as follows:
-
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -239,35 +238,6 @@ export class AppModule { }
 
 ```
 
-* Users who use a prior version of ngx-avatars ( < 3.1 ) can override the configuration as follows:
-
-```typescript
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { UserService } from "./user.service";
-import { AvatarModule,AvatarConfig } from "ngx-avatars";
-import { HttpClientModule } from "@angular/common/http";
-
-const avatarConfig = new AvatarConfig(['red','blue','pink']);
-
-@NgModule({
-  declarations: [
-    AppComponent  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    // import AvatarModule in your app with your own configuration
-    AvatarModule.forRoot(avatarConfig)
-  ],
-  providers: [UserService],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-
-```
-
  **Avatar Styling**
 
  In addition to the style attribute, ngx-avatar style can be customized using css classes. Thus, the generated code offers two css classes that can be overridden :
@@ -288,32 +258,9 @@ export class AppModule { }
  ```
 
 ## Release Notes & History
-* 3.6.0: Angular 8 support
-* 3.5.0: export Avatar component for Angular elements and ng upgrade
-* 3.4.0: http module is removed from the library dependencies. Applications' http module will be used instead.
-* 3.3.x: Bug fixes
-* 3.3.0: Override Source priority order when importing AvatarModule
-* 3.2.0: Add support to Angular 7
-* 3.1.1: fixes the source priority bug 
-* 3.1: fixes AOT / Prod build when loading avatar module with config
-  * This version has a **breaking change** in the way the module with configuration is imported, for more details see Override Avatar Configuration section. 
-* 3.0: Add support to Angular 6
-  * Build the library with Angular CLI
-* 2.9: Bug fixes [#16](https://github.com/Heatmanofurioso/ngx-avatars/issues/16) & [#16](https://github.com/Heatmanofurioso/ngx-avatars/issues/16)
-* 2.8: add initials size option
-* 2.7: code refactoring
-* 2.6: Customize avatar options
-* 2.5: Bug fixes & new css classes
-* 2.4: Refactor async sources
-* 2.3: Add support for github avatar
-* 2.2: Fix prod and aot build
-* 2.1: Bug fixes
-* 2.0: add support to vkontakte source
-* 1.4: background color is now generated based on the sum of ASCII values of avatar's text.
-* 1.3: Bug Fixes ( support dynamic avatar data )
-* 1.2: Add border related properties.
-* 1.1: Listen to click events on avatar and support retina display.
-* 1.0: Avatar component that fetches / generates user avatar from different sources.
+* 1.0.2: Fix production build and publish to npm registry
+* 1.0.1: Update dependencies and project structure
+* 1.0.0: Initial migration from ngx-avatar
 
 
 ## Contributing
@@ -329,7 +276,7 @@ Contributions and all possible collaboration are welcome.
 
 # Testing
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 
 ## Development server
 
