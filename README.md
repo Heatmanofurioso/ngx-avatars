@@ -123,7 +123,7 @@ Check out this [file](https://github.com/Heatmanofurioso/ngx-avatars/blob/master
 
 ## Demo
 Check out this [link](https://ngx-avatar-demo.stackblitz.io/) for a live demo.
-Also, you can play with ngx-avatars using an online editor [here](https://stackblitz.com/edit/ngx-avatar-demo) on stackblitz.
+Also, you can play with ngx-avatars using an online editor [here](https://ngx-avatars-demo.stackblitz.io) on stackblitz.
 
 Moreover, the demo folder contains an application generated with angular cli that uses ngx-avatars component.
 
