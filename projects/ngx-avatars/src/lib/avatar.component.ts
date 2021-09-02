@@ -282,7 +282,7 @@ export class AvatarComponent implements OnChanges, OnDestroy {
         )
         .subscribe(
             avatarSrc => (this.avatarSrc = avatarSrc),
-            err => {
+            () => {
               this.fetchAvatarSource();
             },
         );

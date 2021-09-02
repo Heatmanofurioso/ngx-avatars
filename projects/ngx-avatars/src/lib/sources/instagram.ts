@@ -2,7 +2,7 @@ import { AsyncSource } from './async-source';
 import { AvatarSource } from './avatar-source.enum';
 
 /**
- *  Instagram source impelementation.
+ *  Instagram source implementation.
  *  Fetch avatar source based on instagram identifier
  */
 export class Instagram extends AsyncSource {
