@@ -206,7 +206,7 @@ export class AvatarComponent implements OnChanges, OnDestroy {
   }
 
   private sortAvatarSources(): void {
-    this.sources.sort((source1, source2) =>
+    this.sources.sort((source1: Source, source2: Source) =>
       this.avatarService.compareSources(source1.sourceType, source2.sourceType)
     );
   }
