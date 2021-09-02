@@ -8,12 +8,12 @@ import {
   OnDestroy
 } from '@angular/core';
 
-import { Source } from './sources/source';
-import { AsyncSource } from './sources/async-source';
-import { SourceFactory } from './sources/source.factory';
-import { AvatarService } from './avatar.service';
-import { AvatarSource } from './sources/avatar-source.enum';
-import { takeWhile, map } from 'rxjs/operators';
+import {Source} from './sources/source';
+import {AsyncSource} from './sources/async-source';
+import {SourceFactory} from './sources/source.factory';
+import {AvatarService} from './avatar.service';
+import {AvatarSource} from './sources/avatar-source.enum';
+import {takeWhile, map} from 'rxjs/operators';
 
 type Style = Partial<CSSStyleDeclaration>;
 
@@ -31,33 +31,34 @@ type Style = Partial<CSSStyleDeclaration>;
   selector: 'ngx-avatars',
   styles: [
     `
-      :host {
-        border-radius: 50%;
-      }
+        :host {
+            border-radius: 50%;
+        }
     `
   ],
   template: `
-    <div
-      (click)="onAvatarClicked()"
-      class="avatar-container"
-      [ngStyle]="hostStyle"
-    >
-      <img
-        *ngIf="avatarSrc; else textAvatar"
-        [src]="avatarSrc"
-        [width]="size"
-        [height]="size"
-        [ngStyle]="avatarStyle"
-        (error)="fetchAvatarSource()"
-        class="avatar-content"
-        loading="lazy"
-      />
-      <ng-template #textAvatar>
-        <div *ngIf="avatarText" class="avatar-content" [ngStyle]="avatarStyle">
-          {{ avatarText }}
-        </div>
-      </ng-template>
-    </div>
+      <div
+              (click)="onAvatarClicked()"
+              class="avatar-container"
+              [ngStyle]="hostStyle"
+      >
+          <img
+                  *ngIf="avatarSrc; else textAvatar"
+                  [src]="avatarSrc"
+                  [alt]="avatarSrc"
+                  [width]="size"
+                  [height]="size"
+                  [ngStyle]="avatarStyle"
+                  (error)="fetchAvatarSource()"
+                  class="avatar-content"
+                  loading="lazy"
+          />
+          <ng-template #textAvatar>
+              <div *ngIf="avatarText" class="avatar-content" [ngStyle]="avatarStyle">
+                  {{ avatarText }}
+              </div>
+          </ng-template>
+      </div>
   `
 })
 export class AvatarComponent implements OnChanges, OnDestroy {
@@ -119,7 +120,8 @@ export class AvatarComponent implements OnChanges, OnDestroy {
   constructor(
     public sourceFactory: SourceFactory,
     private avatarService: AvatarService
-  ) {}
+  ) {
+  }
 
   public onAvatarClicked(): void {
     this.clickOnAvatar.emit(this.sources[this.currentIndex]);
@@ -135,7 +137,7 @@ export class AvatarComponent implements OnChanges, OnDestroy {
   public ngOnChanges(changes: SimpleChanges): void {
     for (const propName in changes) {
       if (this.avatarService.isSource(propName)) {
-        const sourceType: AvatarSource = AvatarSource[propName.toUpperCase() as keyof typeof AvatarSource] ;
+        const sourceType: AvatarSource = AvatarSource[propName.toUpperCase() as keyof typeof AvatarSource];
         const currentValue = changes[propName].currentValue;
         if (currentValue && typeof currentValue === 'string') {
           this.addSource(sourceType, currentValue);
@@ -263,6 +265,7 @@ export class AvatarComponent implements OnChanges, OnDestroy {
       ...this.style,
     };
   }
+
   /**
    * Fetch avatar image asynchronously.
    *
@@ -275,17 +278,17 @@ export class AvatarComponent implements OnChanges, OnDestroy {
     }
 
     this.avatarService
-        .fetchAvatar(source.getAvatar(+this.size))
-        .pipe(
-            takeWhile(() => this.isAlive),
-            map(response => source.processResponse(response, +this.size)),
-        )
-        .subscribe(
-            avatarSrc => (this.avatarSrc = avatarSrc),
-            () => {
-              this.fetchAvatarSource();
-            },
-        );
+      .fetchAvatar(source.getAvatar(+this.size))
+      .pipe(
+        takeWhile(() => this.isAlive),
+        map(response => source.processResponse(response, +this.size))
+      )
+      .subscribe({
+        next: avatarSrc => (this.avatarSrc = avatarSrc),
+        error: () => {
+          this.fetchAvatarSource();
+        }
+      });
   }
 
   /**
@@ -300,7 +303,7 @@ export class AvatarComponent implements OnChanges, OnDestroy {
       source.sourceId = sourceValue;
     } else {
       this.sources.push(
-          this.sourceFactory.newInstance(sourceType, sourceValue),
+        this.sourceFactory.newInstance(sourceType, sourceValue),
       );
     }
   }
