@@ -30,6 +30,15 @@
       ],
       "ngx-avatars/*": [
         "dist/ngx-avatars/*"
+      ],
+      "@angular/*":[
+        "./node_modules/@angular/*"
+      ],
+      "rxjs": [
+        "./node_modules/rxjs"
+      ],
+      "rxjs/*": [
+        "./node_modules/rxjs/*"
       ]
     }
   },

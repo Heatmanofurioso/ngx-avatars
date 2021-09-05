@@ -111,7 +111,7 @@ export class AvatarService {
     return value
       .split('')
       .map(letter => letter.charCodeAt(0))
-      .reduce((previous, current) => previous + current);
+      .reduce((previous: number, current: number) => previous + current);
   }
 
   private getSourcePriority(sourceType: AvatarSource) {
