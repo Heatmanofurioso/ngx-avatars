@@ -258,6 +258,7 @@ export class AppModule { }
  ```
 
 ## Release Notes & History
+* 1.1.0: Update Angular to V 12
 * 1.0.2: Fix production build and publish to npm registry
 * 1.0.1: Update dependencies and project structure
 * 1.0.0: Initial migration from ngx-avatar
