@@ -1,5 +1,5 @@
 {
-  "name": "testing",
+  "name": "ngx-avatars",
   "version": "1.0.0",
   "homepage": "https://github.com/Heatmanofurioso/ngx-avatars",
   "description": "README.md",
@@ -17,7 +17,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production",
     "postbuild": "node scripts/copy-artifacts.js",
     "test": "ng test",
     "lint": "ng lint",
