@@ -1,7 +1,7 @@
 {
   "name": "ngx-avatars",
   "description": "A universal avatar component for Angular applications that fetches / generates avatar based on the information you have about the user.",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "keywords": [
     "angular",
     "avatar",

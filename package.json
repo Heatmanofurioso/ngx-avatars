@@ -19,6 +19,7 @@
     "start": "ng serve",
     "build": "ng build --configuration production",
     "postbuild": "node scripts/copy-artifacts.js",
+    "deploy": "cd dist/ngx-avatars && npm publish",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
