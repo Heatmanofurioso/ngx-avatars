@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - '15.10.0'
+  - '17.0.1'
 dist: trusty
 os: linux
 addons:
