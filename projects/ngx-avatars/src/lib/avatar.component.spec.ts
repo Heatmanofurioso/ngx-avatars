@@ -1,21 +1,21 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 
-import { AvatarComponent } from './avatar.component';
-import { SourceFactory } from './sources/source.factory';
-import { AvatarService } from './avatar.service';
-import { By } from '@angular/platform-browser';
-import { SimpleChange } from '@angular/core';
-import { AvatarSource } from './sources/avatar-source.enum';
-import { Observable, of, throwError } from 'rxjs';
-import { Source } from './sources/source';
+import {AvatarComponent} from './avatar.component';
+import {SourceFactory} from './sources/source.factory';
+import {AvatarService} from './avatar.service';
+import {By} from '@angular/platform-browser';
+import {SimpleChange} from '@angular/core';
+import {AvatarSource} from './sources/avatar-source.enum';
+import {Observable, of, throwError} from 'rxjs';
+import {Source} from './sources/source';
 
 class AvatarServiceMock {
   public fetchAvatar(avatarUrl: string): Observable<{ avatar_url: string }> {
     return avatarUrl === 'https://api.github.com/users/github-username' ?
-        of({
-          avatar_url: 'https://mocked.url/foo.jpg',
-        }) :
-        throwError(new Error('Mocked error for ' + avatarUrl));
+      of({
+        avatar_url: 'https://mocked.url/foo.jpg',
+      }) :
+      throwError(() => new Error('Mocked error for ' + avatarUrl));
   }
 
   public compareSources(source1: AvatarSource, source2: AvatarSource): number {
@@ -53,7 +53,7 @@ describe('AvatarComponent', () => {
       declarations: [AvatarComponent],
       providers: [
         SourceFactory,
-        { provide: AvatarService, useClass: AvatarServiceMock }
+        {provide: AvatarService, useClass: AvatarServiceMock}
       ]
     }).compileComponents();
 
@@ -94,7 +94,7 @@ describe('AvatarComponent', () => {
     fixture.detectChanges();
 
     const avatarTextEl = fixture.debugElement.query(
-        By.css('.avatar-container > div')
+      By.css('.avatar-container > div')
     );
     expect(avatarTextEl.nativeElement.textContent.trim()).toBe('JD');
   });
@@ -111,10 +111,11 @@ describe('AvatarComponent', () => {
     fixture.detectChanges();
 
     const avatarImgEl = fixture.debugElement.query(
-        By.css('.avatar-container > img')
+      By.css('.avatar-container > img')
     );
     expect(avatarImgEl.nativeElement.src).toBe('https://mocked.url/foo.jpg&s=50');
   });
 
-  describe('AvatarImage', () => {});
+  describe('AvatarImage', () => {
+  });
 });
