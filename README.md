@@ -258,6 +258,7 @@ export class AppModule { }
  ```
 
 ## Release Notes & History
+* 1.1.2: Fixed build issues. 
 * 1.1.1: Fix package versioning in release
 * 1.1.0: Update Angular to V 12
 * 1.0.2: Fix production build and publish to npm registry
