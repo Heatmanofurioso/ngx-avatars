@@ -1,6 +1,7 @@
 #IDE configuration files
 .idea
 .vscode
+.history
 
 # Dependency directory
 node_modules
