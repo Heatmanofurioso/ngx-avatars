@@ -14,7 +14,7 @@ before_install:
   - sh -e /etc/init.d/xvfb start
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
-  - npm update -g yarn
+  - npm install yarn
 deploy:
   on:
     tags: true
