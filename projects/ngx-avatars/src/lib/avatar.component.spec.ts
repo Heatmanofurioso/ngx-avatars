@@ -100,7 +100,7 @@ describe('AvatarComponent', () => {
   });
 
   it('should try next async source if first async source fails', () => {
-    spyOn(avatarService, 'isTextAvatar').and.returnValue(false);
+    jest.spyOn(avatarService, 'isTextAvatar').mockReturnValue(false);
     component.google = 'invalid@example.com';
     component.github = 'github-username';
     component.ngOnChanges({

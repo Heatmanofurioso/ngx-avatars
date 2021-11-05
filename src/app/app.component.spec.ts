@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { UserService } from './user.service';
 
 const userServiceStub = {
-  fetchInformation: jasmine.createSpy('userService.fetchInformation'),
-  getUserFacebook: jasmine.createSpy('userService.getUserFacebook')
 };
 
 describe('AppComponent', () => {

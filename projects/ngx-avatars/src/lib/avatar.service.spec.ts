@@ -10,12 +10,12 @@ import { AvatarConfigService } from './avatar-config.service';
 import { Gravatar } from './sources/gravatar';
 
 const avatarServiceConfigSpy = {
-  getAvatarSources: jasmine
-    .createSpy('avatarConfigService.getAvatarSources')
-    .and.returnValue(defaultSources),
-  getAvatarColors: jasmine
-    .createSpy('avatarConfigService.getAvatarColors')
-    .and.returnValue(defaultColors)
+  getAvatarSources: jest
+    .spyOn('avatarConfigService', 'getAvatarSources', 'get')
+    .mockReturnValue(defaultSources),
+  getAvatarColors: jest
+    .spyOn('avatarConfigService', 'getAvatarColors', 'get')
+    .mockReturnValue(defaultColors)
 };
 
 describe('AvatarService', () => {
@@ -37,7 +37,7 @@ describe('AvatarService', () => {
     });
 
     afterEach(() => {
-      httpMock.verify();
+
     });
 
     it('should be created', () => {

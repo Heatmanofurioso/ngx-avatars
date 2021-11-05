@@ -101,12 +101,11 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "main": ["src/test.ts"],
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
             "styles": [
               "src/styles.scss"
             ],
@@ -158,12 +157,11 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/ngx-avatars/src/test.ts",
-            "tsConfig": "projects/ngx-avatars/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-avatars/karma.conf.js",
-            "watch": false
+            "main": ["src/test.ts"],
+            "polyfills": ["src/polyfills.ts"],
+            "tsConfig": "src/tsconfig.spec.json"
           }
         }
       }

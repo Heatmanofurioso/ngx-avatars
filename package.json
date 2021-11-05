@@ -40,27 +40,44 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-builders/jest": "12.1.2",
     "@angular-devkit/build-angular": "~13.0.1",
     "@angular-devkit/build-ng-packagr": "~0.1002.0",
     "@angular/cli": "~13.0.1",
     "@angular/compiler-cli": "^13.0.0",
     "@angular/language-service": "^13.0.0",
-    "@types/jasmine": "~3.10.2",
-    "@types/jasminewd2": "~2.0.10",
-    "@types/node": "^16.11.6",
     "codelyzer": "^6.0.2",
-    "jasmine-core": "~3.10.1",
-    "jasmine-spec-reporter": "~7.0.0",
-    "karma": "~6.3.7",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~3.0.3",
-    "karma-jasmine": "~4.0.1",
-    "karma-jasmine-html-reporter": "^1.7.0",
-    "karma-mocha-reporter": "^2.2.5",
+    "@testing-library/jest-dom": "5.15.0",
+    "@types/node": "^16.11.6",
+    "@types/jest": "27.0.2",
+    "jest": "27.3.1",
+    "jest-preset-angular": "11.0.0-rc.1",
     "ng-packagr": "^13.0.2",
     "protractor": "~7.0.0",
+    "ts-jest": "27.0.7",
     "ts-node": "~10.4.0",
     "tslint": "~6.1.3",
     "typescript": "~4.4.4"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupJest.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/",
+      "<rootDir>/src/test.ts"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "<rootDir>/src/tsconfig.spec.json",
+        "stringifyContentPathRegex": "\\.html$",
+        "astTransformers": [
+          "<rootDir>/node_modules/jest-preset-angular/InlineHtmlStripStylesTransformer"
+        ]
+      }
+    }
   }
 }
+
