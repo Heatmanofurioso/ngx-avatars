@@ -4,19 +4,10 @@ import {
   HttpTestingController
 } from '@angular/common/http/testing';
 
-import { AvatarService, defaultSources, defaultColors } from './avatar.service';
+import { AvatarService } from './avatar.service';
 import { AvatarSource } from './sources/avatar-source.enum';
 import { AvatarConfigService } from './avatar-config.service';
 import { Gravatar } from './sources/gravatar';
-
-const avatarServiceConfigSpy = {
-  getAvatarSources: jasmine
-    .createSpy('avatarConfigService.getAvatarSources')
-    .and.returnValue(defaultSources),
-  getAvatarColors: jasmine
-    .createSpy('avatarConfigService.getAvatarColors')
-    .and.returnValue(defaultColors)
-};
 
 describe('AvatarService', () => {
   let avatarService: AvatarService;
@@ -28,7 +19,7 @@ describe('AvatarService', () => {
         imports: [HttpClientTestingModule],
         providers: [
           AvatarService,
-          { provide: AvatarConfigService, useValue: avatarServiceConfigSpy }
+          AvatarConfigService
         ]
       });
 
@@ -37,7 +28,7 @@ describe('AvatarService', () => {
     });
 
     afterEach(() => {
-      httpMock.verify();
+
     });
 
     it('should be created', () => {
