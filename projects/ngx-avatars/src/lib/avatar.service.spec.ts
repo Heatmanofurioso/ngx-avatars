@@ -4,19 +4,10 @@ import {
   HttpTestingController
 } from '@angular/common/http/testing';
 
-import { AvatarService, defaultSources, defaultColors } from './avatar.service';
+import { AvatarService } from './avatar.service';
 import { AvatarSource } from './sources/avatar-source.enum';
 import { AvatarConfigService } from './avatar-config.service';
 import { Gravatar } from './sources/gravatar';
-
-const avatarServiceConfigSpy = {
-  getAvatarSources: jest
-    .spyOn('avatarConfigService', 'getAvatarSources', 'get')
-    .mockReturnValue(defaultSources),
-  getAvatarColors: jest
-    .spyOn('avatarConfigService', 'getAvatarColors', 'get')
-    .mockReturnValue(defaultColors)
-};
 
 describe('AvatarService', () => {
   let avatarService: AvatarService;
@@ -28,7 +19,7 @@ describe('AvatarService', () => {
         imports: [HttpClientTestingModule],
         providers: [
           AvatarService,
-          { provide: AvatarConfigService, useValue: avatarServiceConfigSpy }
+          AvatarConfigService
         ]
       });
 
