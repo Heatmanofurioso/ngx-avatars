@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2021-11-07
+### Fixed
+- Migrate Angular to V13.
+- Migrate RXJS to V7.4.0
+- Migrate from Karma & Jasmine to Jest
+
 ## [1.1.2] - 2021-11-03
 ### Fixed
 - Fixed TravisCI support for Yarn compatible with Angular 12.x.x
