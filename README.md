@@ -258,6 +258,7 @@ export class AppModule { }
  ```
 
 ## Release Notes & History
+* 1.2.0: Migrate Angular to V13. Migrate RXJS to V7.4.0
 * 1.1.3: Fix package versioning in release
 * 1.1.2: Fixed build issues. 
 * 1.1.1: Fix package versioning in release
