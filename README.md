@@ -5,6 +5,9 @@
 [![Angular Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://angular.io/styleguide)
 ![size](https://img.shields.io/bundlephobia/minzip/ngx-avatars.svg)
 
+## NPM Project
+[ngx-avatars](https://www.npmjs.com/package/ngx-avatars)
+
 ## Warning
 Do not confuse with [ngx-avatar](https://github.com/HaithemMosbahi/ngx-avatar) This project is it's spiritual successor, and all credit goes to HaithemMosbahi and his fellow contributors which 
 will remain in this project's contributing list.
@@ -258,6 +261,7 @@ export class AppModule { }
  ```
 
 ## Release Notes & History
+* 1.2.1: Added ability to disable src cache. Updated several dependencies. Update Angular minor version. Add Husky Git Hooks. Migrate from TSLint to ESLint
 * 1.2.0: Migrate Angular to V13. Migrate RXJS to V7.4.0
 * 1.1.3: Fix package versioning in release
 * 1.1.2: Fixed build issues. 
