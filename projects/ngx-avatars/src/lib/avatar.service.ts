@@ -46,7 +46,7 @@ export const defaultDisableSrcCache = false;
 /**
  * Provides utilities methods related to Avatar component
  */
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class AvatarService {
   public avatarSources: AvatarSource[] = defaultSources;
   public avatarColors: string[] = defaultColors;
