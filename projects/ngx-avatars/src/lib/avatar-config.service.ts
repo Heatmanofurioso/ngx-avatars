@@ -39,4 +39,8 @@ export class AvatarConfigService {
       defaultColors
     );
   }
+
+  public getDisableSrcCache(defaultDisableSrcCache: boolean): boolean {
+    return this.userConfig.disableSrcCache === undefined ? defaultDisableSrcCache : this.userConfig.disableSrcCache;
+  }
 }
