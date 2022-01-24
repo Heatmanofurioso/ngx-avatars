@@ -5,9 +5,15 @@
   "keywords": [
     "angular",
     "avatar",
+    "avatars",
     "component",
     "initials"
   ],
+  "author": {
+    "name": "Heatmanofurioso",
+    "url": "https://github.com/Heatmanofurioso",
+    "email": "ofuriosoheatman@gmail.com"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
