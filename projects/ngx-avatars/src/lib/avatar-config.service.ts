@@ -4,7 +4,7 @@ import { AvatarSource } from './sources/avatar-source.enum';
 import { AVATAR_CONFIG } from './avatar-config.token';
 import { AvatarConfig } from './avatar-config';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class AvatarConfigService {
   constructor(
     @Optional()
@@ -41,6 +41,10 @@ export class AvatarConfigService {
   }
 
   public getDisableSrcCache(defaultDisableSrcCache: boolean): boolean {
-    return this.userConfig.disableSrcCache === undefined ? defaultDisableSrcCache : this.userConfig.disableSrcCache;
+    if (this.userConfig == null || this.userConfig.disableSrcCache == null) {
+      return defaultDisableSrcCache;
+    } else {
+      return this.userConfig.disableSrcCache;
+    }
   }
 }
