@@ -261,6 +261,7 @@ export class AppModule { }
  ```
 
 ## Release Notes & History
+* 1.3.1: Update dependencies
 * 1.3.0: Added ability to disable src cache.
 * 1.2.1: Updated several dependencies. Update Angular minor version. Add Husky Git Hooks. Migrate from TSLint to ESLint
 * 1.2.0: Migrate Angular to V13. Migrate RXJS to V7.4.0
