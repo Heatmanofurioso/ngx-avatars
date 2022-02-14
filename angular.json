@@ -3,6 +3,7 @@
   "version": 1,
   "cli": {
     "analytics": "1c209c8f-e553-45c3-b475-c1943e1d601f",
+    "defaultCollection": "@angular-eslint/schematics",
     "packageManager": "yarn"
   },
   "newProjectRoot": "projects",
@@ -116,6 +117,15 @@
             ],
             "watch": false
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     },
@@ -162,6 +172,15 @@
             "main": ["src/test.ts"],
             "polyfills": ["src/polyfills.ts"],
             "tsConfig": "src/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
