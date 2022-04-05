@@ -262,7 +262,7 @@ export class AppModule { }
  ```
 
 ## Release Notes & History
-* Unreleased: Add referrerpolicy configuration to img tag.
+* Unreleased: Add referrerpolicy configuration to img tag. Update dependencies.
 * 1.3.1: Update dependencies
 * 1.3.0: Added ability to disable src cache.
 * 1.2.1: Updated several dependencies. Update Angular minor version. Add Husky Git Hooks. Migrate from TSLint to ESLint
