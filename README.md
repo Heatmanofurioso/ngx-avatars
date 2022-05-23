@@ -140,29 +140,30 @@ $ ng serve
 
 ## Options
 
-|   Attribute   |      Type        | Default |                                              Description                                               |
-| ------------- | ---------------- | ------- | ------------------------------------------------------------------------------------------------------ |
-| `facebookId`  | *string \| null* |         | Facebook ID                                                                                            |
-| `googleId`    | *string \| null* |         |  Google ID                                                                                             |
-| `twitterId`   | *string \| null* |         | Twitter Handle                                                                                         |
-| `instagramId`   | *string \| null* |         | Instagram Handle                                                                                         |
-| `vkontakteId` | *string \| null* |         | VK ID                                                                                                  |
-| `skypeId`     | *string \| null* |         |  Skype ID                                                                                              |
-| `gravatarId`  | *string \| null* |         | email or md5 email related to gravatar                                                                 |
-| `githubId`    | *string \| null* |         | Github ID                                                                                              |
-| `src`         | *string \| null* |         | Fallback image to use                                                                                  |
-| `name`        | *string \| null* |         | Will be used to generate avatar based on the initials of the person                                    |
-| `value`       | *string \| null* |         | Show a value as avatar                                                                                 |
-| `initialsSize`| *number*         | 0       | Restricts the size of initials - it goes along with the name property and can be used to fix the number of characters that will be displayed as initials. The `0` means no restrictions. |
-| `bgColor`     | *string*         | random  | Give the background a fixed color with a hex like for example #FF0000                                  |
-| `fgColor`     | *string*         | #FFF    | Give the text a fixed color with a hex like for example #FF0000                                        |
-| `size`        | *number*         | 50      | Size of the avatar                                                                                     |
-| `textSizeRatio`| *number*        | 3       | For text based avatars the size of the text as a fragment of size (size / textSizeRatio)               |
-| `round`       | *boolean*        | true    | Round the avatar corners                                                                               |
-| `cornerRadius`| *number*         | 0       | Square avatars can have rounded corners using this property                                            |
-| `borderColor` | *string*         | undefined | Add border with the given color. boder's default style is '1px solid borderColor'                    |
-| `style`       | *object*         |         | Style that will be applied on the root element                                                         |
-| `clickOnAvatar`| *Output*        |         | Fired when the avatar is clicked. The component emits the source object that has been used to fetch the avatar.|
+| Attribute        | Type       | Default   | Description                                                                                                                                                                              |
+|------------------|------------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `facebookId`     | *string*   | null      |                                                                                                                                                                                          | Facebook ID                                                                                            |
+| `googleId`       | *string*   | null      |                                                                                                                                                                                          |  Google ID                                                                                             |
+| `twitterId`      | *string*   | null      |                                                                                                                                                                                          | Twitter Handle                                                                                         |
+| `instagramId`    | *string*   | null      |                                                                                                                                                                                          | Instagram Handle                                                                                       |
+| `vkontakteId`    | *string*   | null      |                                                                                                                                                                                          | VK ID                                                                                                  |
+| `skypeId`        | *string*   | null      |                                                                                                                                                                                          |  Skype ID                                                                                              |
+| `gravatarId`     | *string*   | null      |                                                                                                                                                                                          | email or md5 email related to gravatar                                                                 |
+| `githubId`       | *string*   | null      |                                                                                                                                                                                          | Github ID                                                                                              |
+| `src`            | *string*   | null      |                                                                                                                                                                                          | Fallback image to use                                                                                  |
+| `name`           | *string*   | null      |                                                                                                                                                                                          | Will be used to generate avatar based on the initials of the person                                    |
+| `value`          | *string*   | null      |                                                                                                                                                                                          | Show a value as avatar                                                                                 |
+| `initialsSize`   | *number*   | 0         | Restricts the size of initials - it goes along with the name property and can be used to fix the number of characters that will be displayed as initials. The `0` means no restrictions. |
+| `bgColor`        | *string*   | random    | Give the background a fixed color with a hex like for example #FF0000                                                                                                                    |
+| `fgColor`        | *string*   | #FFF      | Give the text a fixed color with a hex like for example #FF0000                                                                                                                          |
+| `size`           | *number*   | 50        | Size of the avatar                                                                                                                                                                       |
+| `textSizeRatio`  | *number*   | 3         | For text based avatars the size of the text as a fragment of size (size / textSizeRatio)                                                                                                 |
+| `round`          | *boolean*  | true      | Round the avatar corners                                                                                                                                                                 |
+| `cornerRadius`   | *number*   | 0         | Square avatars can have rounded corners using this property                                                                                                                              |
+| `borderColor`    | *string*   | undefined | Add border with the given color. border's default style is '1px solid borderColor'                                                                                                       |
+| `style`          | *object*   |           | Style that will be applied on the root element                                                                                                                                           |
+| `clickOnAvatar`  | *Output*   |           | Fired when the avatar is clicked. The component emits the source object that has been used to fetch the avatar.                                                                          |
+| `referrerpolicy` | *string*   | null      | Adds the noreferrer flag to the img tag.                                                                                                                                                 |
 
  The source object has the following properties:
  * sourceType : avatar source ( Facebook, twitter, etc)
@@ -261,6 +262,7 @@ export class AppModule { }
  ```
 
 ## Release Notes & History
+* 1.3.2: Add referrerpolicy configuration to img tag. Update dependencies. Remove codelyzer.
 * 1.3.1: Update dependencies
 * 1.3.0: Added ability to disable src cache.
 * 1.2.1: Updated several dependencies. Update Angular minor version. Add Husky Git Hooks. Migrate from TSLint to ESLint

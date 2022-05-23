@@ -49,6 +49,7 @@ type Style = Partial<CSSStyleDeclaration>;
                   [width]="size"
                   [height]="size"
                   [ngStyle]="avatarStyle"
+                  [referrerPolicy]="referrerpolicy"
                   (error)="fetchAvatarSource()"
                   class="avatar-content"
                   loading="lazy"
@@ -100,6 +101,8 @@ export class AvatarComponent implements OnChanges, OnDestroy {
   public initials?: string | null;
   @Input()
   public value?: string | null;
+  @Input()
+  public referrerpolicy?: string | null;
   @Input()
   public placeholder?: string;
   @Input()
