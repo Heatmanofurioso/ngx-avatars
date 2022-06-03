@@ -3,8 +3,10 @@
   "version": 1,
   "cli": {
     "analytics": "1c209c8f-e553-45c3-b475-c1943e1d601f",
-    "defaultCollection": "@angular-eslint/schematics",
-    "packageManager": "yarn"
+    "packageManager": "yarn",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -185,6 +187,5 @@
         }
       }
     }
-  },
-  "defaultProject": "ngx-avatars"
+  }
 }
