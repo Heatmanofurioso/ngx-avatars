@@ -106,8 +106,12 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "main": ["src/test.ts"],
-            "polyfills": ["src/polyfills.ts"],
+            "main": [
+              "src/test.ts"
+            ],
+            "polyfills": [
+              "src/polyfills.ts"
+            ],
             "tsConfig": "src/tsconfig.spec.json",
             "styles": [
               "src/styles.scss"
@@ -163,16 +167,20 @@
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-avatars/ng-package.prod.json"
-            ,              "tsConfig": "projects/ngx-avatars/tsconfig.lib.prod.json"
-}
+              "project": "projects/ngx-avatars/ng-package.prod.json",
+              "tsConfig": "projects/ngx-avatars/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "main": ["src/test.ts"],
-            "polyfills": ["src/polyfills.ts"],
+            "main": [
+              "src/test.ts"
+            ],
+            "polyfills": [
+              "src/polyfills.ts"
+            ],
             "tsConfig": "src/tsconfig.spec.json"
           }
         },
