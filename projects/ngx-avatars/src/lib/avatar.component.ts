@@ -5,7 +5,8 @@ import {
   EventEmitter,
   OnChanges,
   SimpleChanges,
-  OnDestroy
+  OnDestroy,
+  SecurityContext
 } from '@angular/core';
 
 import {Source} from './sources/source';
@@ -14,6 +15,7 @@ import {SourceFactory} from './sources/source.factory';
 import {AvatarService} from './avatar.service';
 import {AvatarSource} from './sources/avatar-source.enum';
 import {takeWhile, map} from 'rxjs/operators';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 type Style = Partial<CSSStyleDeclaration>;
 
@@ -95,7 +97,7 @@ export class AvatarComponent implements OnChanges, OnDestroy {
   @Input('githubId')
   public github?: string | null;
   @Input('src')
-  public custom?: string | null;
+  public custom?: string | SafeUrl | null;
   @Input('name')
   public initials?: string | null;
   @Input()
@@ -109,7 +111,7 @@ export class AvatarComponent implements OnChanges, OnDestroy {
   public clickOnAvatar: EventEmitter<Source> = new EventEmitter<Source>();
 
   public isAlive = true;
-  public avatarSrc: string | null = null;
+  public avatarSrc: SafeUrl | null = null;
   public avatarText: string | null = null;
   public avatarStyle: Style = {};
   public hostStyle: Style = {};
@@ -119,7 +121,8 @@ export class AvatarComponent implements OnChanges, OnDestroy {
 
   constructor(
     public sourceFactory: SourceFactory,
-    private avatarService: AvatarService
+    private avatarService: AvatarService,
+    private sanitizer: DomSanitizer
   ) {
   }
 
@@ -142,7 +145,12 @@ export class AvatarComponent implements OnChanges, OnDestroy {
         if (currentValue && typeof currentValue === 'string') {
           this.addSource(sourceType, currentValue);
         } else {
-          this.removeSource(sourceType);
+          const sanitized = this.sanitizer.sanitize(SecurityContext.URL, currentValue);
+          if (sanitized) {
+            this.addSource(sourceType, sanitized);
+          } else {
+            this.removeSource(sourceType);
+          }
         }
       }
     }
@@ -221,7 +229,7 @@ export class AvatarComponent implements OnChanges, OnDestroy {
     if (avatarSource instanceof AsyncSource) {
       this.fetchAndProcessAsyncAvatar(avatarSource);
     } else {
-      this.avatarSrc = avatarSource.getAvatar(+this.size);
+      this.avatarSrc = this.sanitizer.bypassSecurityTrustUrl(avatarSource.getAvatar(+this.size));
     }
   }
 

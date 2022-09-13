@@ -54,5 +54,9 @@
     <ngx-avatars [name]="'failing'" gravatarId="invalid@example.com"></ngx-avatars>
 </span>
 
+<h2>SafeUrl Avatars</h2>
+<!-- use an Observable<SafeUrl | null> as source:-->
+<ngx-avatars [src]="safeUrlPicture$ | async" size="70"></ngx-avatars>
+
 </div>
 
