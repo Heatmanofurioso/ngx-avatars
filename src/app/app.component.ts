@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './user.service';
 import { Source } from '../../projects/ngx-avatars/src/lib/sources/source';
-import { from, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { SafeUrl } from '@angular/platform-browser';
 
 @Component({
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
 
   failedSources: number[] = [];
 
-  safeUrlPicture$ : Observable<SafeUrl | null> = from(this.userService.getPictureAsSafeUrl());
+  safeUrlPicture$ : Observable<SafeUrl | null> = this.userService.getPictureAsSafeUrl();
 
   constructor(private userService: UserService) {}
 

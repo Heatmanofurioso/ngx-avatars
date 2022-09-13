@@ -25,10 +25,10 @@ export class UserService {
     );
   }
 
-  getPictureAsSafeUrl(): Promise<SafeUrl | null> {
-    return fetch('assets/img/avatar.jpg')
-      .then(res => res.blob())
-      .then(x => URL.createObjectURL(x))
-      .then(x => this.sanitizer.bypassSecurityTrustUrl(x));
+  getPictureAsSafeUrl(): Observable<SafeUrl | null> {
+    return this.http.get('assets/img/avatar.jpg', {responseType: 'blob'}).pipe(
+        map(URL.createObjectURL),
+        map(this.sanitizer.bypassSecurityTrustUrl)
+      );
   }
 }
