@@ -47,7 +47,7 @@ type Style = Partial<CSSStyleDeclaration>;
           <img
                   *ngIf="avatarSrc; else textAvatar"
                   [src]="avatarSrc"
-                  [alt]="avatarSrc"
+                  [alt]="(customAlt)? customAlt: avatarAlt"
                   [width]="size"
                   [height]="size"
                   [ngStyle]="avatarStyle"
@@ -98,6 +98,8 @@ export class AvatarComponent implements OnChanges, OnDestroy {
   public github?: string | null;
   @Input('src')
   public custom?: string | SafeUrl | null;
+  @Input('alt')
+  public customAlt?: string | null;
   @Input('name')
   public initials?: string | null;
   @Input()
@@ -112,6 +114,7 @@ export class AvatarComponent implements OnChanges, OnDestroy {
 
   public isAlive = true;
   public avatarSrc: SafeUrl | null = null;
+  public avatarAlt: SafeUrl | null = null;
   public avatarText: string | null = null;
   public avatarStyle: Style = {};
   public hostStyle: Style = {};
@@ -230,6 +233,7 @@ export class AvatarComponent implements OnChanges, OnDestroy {
       this.fetchAndProcessAsyncAvatar(avatarSource);
     } else {
       this.avatarSrc = this.sanitizer.bypassSecurityTrustUrl(avatarSource.getAvatar(+this.size));
+      this.avatarAlt = avatarSource.getAvatar(+this.size);
     }
   }
 

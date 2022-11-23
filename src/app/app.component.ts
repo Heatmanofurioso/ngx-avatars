@@ -12,6 +12,7 @@ import { SafeUrl } from '@angular/platform-browser';
 export class AppComponent implements OnInit {
   userName = 'Haithem Mosbahi';
   userFB = 'wrongId';
+  alt='Haithem Mosbahi'
   customStyle = {
     backgroundColor: '#27ae60',
     border: '1px solid #bdc3c7',
