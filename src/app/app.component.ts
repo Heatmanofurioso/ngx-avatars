@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './user.service';
 import { Source } from '../../projects/ngx-avatars/src/lib/sources/source';
+import { Observable } from 'rxjs';
+import { SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,7 @@ import { Source } from '../../projects/ngx-avatars/src/lib/sources/source';
 export class AppComponent implements OnInit {
   userName = 'Haithem Mosbahi';
   userFB = 'wrongId';
+  alt='Haithem Mosbahi'
   customStyle = {
     backgroundColor: '#27ae60',
     border: '1px solid #bdc3c7',
@@ -20,7 +23,9 @@ export class AppComponent implements OnInit {
 
   failedSources: number[] = [];
 
-  constructor(public userService: UserService) {}
+  safeUrlPicture$ : Observable<SafeUrl | null> = this.userService.getPictureAsSafeUrl();
+
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
     this.userService.fetchInformation().subscribe(user => {
