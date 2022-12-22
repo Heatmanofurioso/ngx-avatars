@@ -16,7 +16,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "downlevelIteration": true,
-    "target": "es2020",
+    "target": "ES2022",
     "strictNullChecks": true,
     "typeRoots": [
       "node_modules/@types"
@@ -32,7 +32,7 @@
       "ngx-avatars/*": [
         "dist/ngx-avatars/*"
       ],
-      "@angular/*":[
+      "@angular/*": [
         "./node_modules/@angular/*"
       ],
       "rxjs": [
@@ -41,7 +41,8 @@
       "rxjs/*": [
         "./node_modules/rxjs/*"
       ]
-    }
+    },
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,
