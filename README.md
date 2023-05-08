@@ -262,6 +262,7 @@ export class AppModule { }
  ```
 
 ## Release Notes & History
+* 1.6.0: Migrate to Angular V16
 * 1.5.0: Migrate to Angular V15
 * 1.4.0: Migrate to Angular V14
 * 1.3.2: Add referrerpolicy configuration to img tag. Update dependencies. Remove codelyzer.
