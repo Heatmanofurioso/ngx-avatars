@@ -4,9 +4,7 @@
   "cli": {
     "analytics": "1c209c8f-e553-45c3-b475-c1943e1d601f",
     "packageManager": "yarn",
-    "schematicCollections": [
-      "@angular-eslint/schematics"
-    ]
+    "schematicCollections": ["@angular-eslint/schematics"]
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -52,13 +50,8 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -89,48 +82,36 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-avatars-demo:build"
+            "buildTarget": "ngx-avatars-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-avatars-demo:build:production"
+              "buildTarget": "ngx-avatars-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-avatars-demo:build"
+            "buildTarget": "ngx-avatars-demo:build"
           }
         },
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "main": [
-              "src/test.ts"
-            ],
-            "polyfills": [
-              "src/polyfills.ts"
-            ],
+            "main": ["src/test.ts"],
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "src/tsconfig.spec.json",
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["src/styles.scss"],
             "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "watch": false
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }
@@ -160,7 +141,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/ngx-avatars/tsconfig.lib.json",
             "project": "projects/ngx-avatars/ng-package.json"
@@ -175,22 +156,15 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "main": [
-              "src/test.ts"
-            ],
-            "polyfills": [
-              "src/polyfills.ts"
-            ],
+            "main": ["src/test.ts"],
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "src/tsconfig.spec.json"
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }
