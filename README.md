@@ -262,6 +262,8 @@ export class AppModule { }
  ```
 
 ## Release Notes & History
+* 1.7.0: Migrate to Angular V17
+* 1.6.1: Migrate to Angular V16
 * 1.6.1: Migrate to Angular V16
 * 1.6.0: Migrate to Angular V16
 * 1.5.0: Migrate to Angular V15
