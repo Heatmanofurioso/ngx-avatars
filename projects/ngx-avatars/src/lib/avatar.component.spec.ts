@@ -70,7 +70,7 @@ describe('AvatarComponent', () => {
 
   describe('AvatarText', () => {
     it('should display the initials of the given value', async () => {
-      fixture.componentRef.setInput('name', 'John Doe'); // alias von @Input('name')
+      fixture.componentRef.setInput('name', 'John Doe');
       await fixture.whenStable();
       fixture.detectChanges()
       const avatarTextEl = fixture.debugElement.query(
