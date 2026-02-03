@@ -49,9 +49,7 @@
               "base": "dist/ngx-avatars-demo"
             },
             "index": "src/index.html",
-            "polyfills": [
-              "src/polyfills.ts"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "src/tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.scss"],
@@ -102,7 +100,7 @@
           "builder": "@angular-builders/jest:run",
           "options": {
             "main": ["src/test.ts"],
-            "polyfills": ["src/polyfills.ts"],
+            "polyfills": ["zone.js"],
             "tsConfig": "src/tsconfig.spec.json",
             "styles": ["src/styles.scss"],
             "scripts": [],
@@ -159,7 +157,7 @@
           "builder": "@angular-builders/jest:run",
           "options": {
             "main": ["src/test.ts"],
-            "polyfills": ["src/polyfills.ts"],
+            "polyfills": ["zone.js"],
             "tsConfig": "src/tsconfig.spec.json"
           }
         },

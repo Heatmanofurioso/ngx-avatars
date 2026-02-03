@@ -4,7 +4,6 @@ import {AvatarComponent} from './avatar.component';
 import {SourceFactory} from './sources/source.factory';
 import {AvatarService} from './avatar.service';
 import {By} from '@angular/platform-browser';
-import {SimpleChange} from '@angular/core';
 import {AvatarSource} from './sources/avatar-source.enum';
 import {Observable, of, throwError} from 'rxjs';
 import {Source} from './sources/source';
@@ -70,46 +69,33 @@ describe('AvatarComponent', () => {
   });
 
   describe('AvatarText', () => {
-    it('should display the initials of the given value', () => {
-      component.initials = 'John Doe';
-      component.ngOnChanges({
-        initials: new SimpleChange(null, 'John Doe', true)
-      });
-
-      fixture.detectChanges();
-
+    it('should display the initials of the given value', async () => {
+      fixture.componentRef.setInput('name', 'John Doe'); // alias von @Input('name')
+      await fixture.whenStable();
+      fixture.detectChanges()
       const avatarTextEl = fixture.debugElement.query(
-        By.css('.avatar-container > div')
+          By.css('.avatar-container > div')
       );
       expect(avatarTextEl.nativeElement.textContent.trim()).toBe('JD');
     });
   });
 
-  it('should not try again failed sources', () => {
-    component.gravatar = 'invalid@example.com';
-    component.initials = 'John Doe';
-    component.ngOnChanges({
-      gravatar: new SimpleChange(null, 'invalid@example.com', true),
-      initials: new SimpleChange(null, 'John Doe', true)
-    });
-
+  it('should not try again failed sources', async () => {
+    fixture.componentRef.setInput('gravatarId', 'invalid@example.com');
+    fixture.componentRef.setInput('name', 'John Doe');
+    await fixture.whenStable();
     fixture.detectChanges();
-
     const avatarTextEl = fixture.debugElement.query(
       By.css('.avatar-container > div')
     );
     expect(avatarTextEl.nativeElement.textContent.trim()).toBe('JD');
   });
 
-  it('should try next async source if first async source fails', () => {
+  it('should try next async source if first async source fails', async  () => {
     jest.spyOn(avatarService, 'isTextAvatar').mockReturnValue(false);
-    component.google = 'invalid@example.com';
-    component.github = 'github-username';
-    component.ngOnChanges({
-      google: new SimpleChange(null, 'invalid@example.com', true),
-      github: new SimpleChange(null, 'github-username', true)
-    });
-
+    fixture.componentRef.setInput('googleId', 'invalid@example.com' )
+    fixture.componentRef.setInput('githubId', 'github-username' )
+    await fixture.whenStable();
     fixture.detectChanges();
 
     const avatarImgEl = fixture.debugElement.query(
