@@ -99,12 +99,8 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "main": ["src/test.ts"],
-            "polyfills": ["zone.js"],
             "tsConfig": "src/tsconfig.spec.json",
-            "styles": ["src/styles.scss"],
-            "scripts": [],
-            "assets": ["src/favicon.ico", "src/assets"],
+            "zoneless": false,
             "watch": false
           }
         },
@@ -156,15 +152,17 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "main": ["src/test.ts"],
-            "polyfills": ["zone.js"],
-            "tsConfig": "src/tsconfig.spec.json"
+            "tsConfig": "src/tsconfig.spec.json",
+            "zoneless": false
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+            "lintFilePatterns": [
+              "projects/ngx-avatars/src/**/*.ts",
+              "projects/ngx-avatars/src/**/*.html"
+            ]
           }
         }
       }

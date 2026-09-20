@@ -26,9 +26,6 @@ import { CustomNoCache } from './custom-no-cache';
 export class SourceFactory {
   private sources: { [key: string]: SourceCreator } = {};
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor(...args: unknown[]);
-
   constructor() {
     const avatarConfigService = inject(AvatarConfigService);
 
