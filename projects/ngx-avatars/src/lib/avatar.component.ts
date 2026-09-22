@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnDestroy, SecurityContext, inject } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnDestroy, SecurityContext, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { Source } from './sources/source';
 import { AsyncSource } from './sources/async-source';
@@ -60,6 +60,7 @@ type Style = Partial<CSSStyleDeclaration>;
     CommonModule,
     NgOptimizedImage
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true
 })
 export class AvatarComponent implements OnChanges, OnDestroy {

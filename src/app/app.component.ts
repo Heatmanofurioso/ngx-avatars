@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { UserService } from './user.service';
 import { Source } from '../../projects/ngx-avatars/src/lib/sources/source';
 import { Observable } from 'rxjs';
@@ -14,6 +14,7 @@ import {AvatarComponent} from "../../projects/ngx-avatars/src/lib/avatar.compone
         AsyncPipe,
         AvatarComponent
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: true
 })
 export class AppComponent implements OnInit {
