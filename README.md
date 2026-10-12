@@ -277,6 +277,7 @@ export class AppComponent {}
  ```
 
 ## Release Notes & History
+* 1.10.3: Update to Angular 22
 * 1.10.2: Update to Angular 21
 * 1.10.1: Merge Hamza's PR fixing the package
 * 1.10.0: Migrate to Angular V20

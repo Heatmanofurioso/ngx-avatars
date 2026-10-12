@@ -17,7 +17,7 @@
     "target": "ES2024",
     "strictNullChecks": true,
     "typeRoots": [
-      "node_modules/@types"
+      "./node_modules/@types"
     ],
     "lib": [
       "ES2024",
